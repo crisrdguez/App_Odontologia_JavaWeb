@@ -1,6 +1,7 @@
 
 package logica;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -8,7 +9,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Paciente extends Persona {
+public class Paciente extends Persona implements Serializable {
     
     //private int id_paciente;
     private boolean tiene_OS;
@@ -22,13 +23,14 @@ public class Paciente extends Persona {
     public Paciente() {
     }
 
-    public Paciente(boolean tiene_OS, String tipoSangre, Responsable unResponsable, List<Turno> listaTurnos, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
-        super(dni, nombre, apellido, telefono, direccion, fecha_nac);
+    public Paciente(boolean tiene_OS, String tipoSangre, Responsable unResponsable, List<Turno> listaTurnos, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+        super(id, dni, nombre, apellido, telefono, direccion, fecha_nac);
         this.tiene_OS = tiene_OS;
         this.tipoSangre = tipoSangre;
         this.unResponsable = unResponsable;
         this.listaTurnos = listaTurnos;
     }
+
 
     public boolean isTiene_OS() {
         return tiene_OS;

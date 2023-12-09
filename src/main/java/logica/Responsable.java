@@ -12,8 +12,8 @@ public class Responsable extends Persona {
     public Responsable() {
     }
 
-    public Responsable(String tipoResp, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
-        super(dni, nombre, apellido, telefono, direccion, fecha_nac);
+    public Responsable(String tipoResp, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+        super(id, dni, nombre, apellido, telefono, direccion, fecha_nac);
         this.tipoResp = tipoResp;
     }
 
