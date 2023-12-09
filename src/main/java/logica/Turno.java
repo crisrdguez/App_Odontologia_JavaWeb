@@ -25,11 +25,11 @@ public class Turno implements Serializable {
 
     //Creamos un atributo de odontologo
     @ManyToOne
-    @JoinColumn(name="id_turno")  //nombre que va a tener en este caso la foreignkey que voy a tener
+    @JoinColumn(name="id_odonto")  //nombre que va a tener en este caso la foreignkey que voy a tener
     private Odontologo odonto;
     
     @ManyToOne
-    @JoinColumn(name="id_turno2")  //nombre que va a tener en este caso la foreignkey que voy a tener
+    @JoinColumn(name="id_pacient")  //nombre que va a tener en este caso la foreignkey que voy a tener
     private Paciente pacient;
     
     public Turno() {
