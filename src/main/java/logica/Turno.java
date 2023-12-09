@@ -2,14 +2,35 @@
 package logica;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+@Entity
 public class Turno {
-    
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id_turno;
+    
+    @Temporal(TemporalType.DATE)
     private Date fechaTurno;
     private String horaTurno;
     private String afeccion;
 
+    //Creamos un atributo de odontologo
+    @ManyToOne
+    @JoinColumn(name="id_turno")  //nombre que va a tener en este caso la foreignkey que voy a tener
+    private Odontologo odonto;
+    
+    @ManyToOne
+    @JoinColumn(name="id_turno2")  //nombre que va a tener en este caso la foreignkey que voy a tener
+    private Paciente pacient;
+    
     public Turno() {
     }
 
