@@ -9,16 +9,16 @@
 <form class="user" action="/SvEditUsuarios" method="POST">
     <div class="form-group col">
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="nombreUsu" name="nombreUsu" value="<% usu.getNombreUsuario(); %>"
+            <input type="text" class="form-control form-control-user" id="nombreUsu" name="nombreUsu" value="<%=usu.getNombreUsuario()%>"
                 >
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="password" class="form-control form-control-user" id="password" name="password" value="<% usu.getPassword(); %>"
-                placeholder="Password">
+            <input type="password" class="form-control form-control-user" id="password" name="password" value="<%=usu.getPassword()%>"
+                >
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="rol" name="rol" value="<% usu.getRol(); %>"
-                placeholder="Rol">
+            <input type="text" class="form-control form-control-user" id="rol" name="rol" value="<%=usu.getRol()%>"
+               >
         </div>
     </div>                            
     <button class="btn btn-primary btn-user btn-block col-sm-6 mb-3" type="submit">
