@@ -52,6 +52,8 @@ public class ControladoraPersistencia {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    //Odontologos
 
     public void crearOdontologo(Odontologo odon) {
         odontologoJPA.create(odon);
@@ -59,6 +61,28 @@ public class ControladoraPersistencia {
 
     public List<Odontologo> getOdontologos() {
         return odontologoJPA.findOdontologoEntities();
+    }
+
+    public void borrarOdontologo(int id) {
+        
+        try {
+            odontologoJPA.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    public Odontologo traerOdon(int id) {
+        return odontologoJPA.findOdontologo(id);
+    }
+
+    public void editarOdontologo(Odontologo odon) {
+        try {
+            odontologoJPA.edit(odon);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     

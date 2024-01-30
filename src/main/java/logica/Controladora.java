@@ -61,6 +61,8 @@ public class Controladora {
         return ingreso;
         
     }
+    
+    //Odontologos
 
     public void crearOdontologo(String dniOdon, String nombreOdon, String apellidoOdon, String telefonoOdon, 
             String direccionOdon, Date nacimientoOdon, String especialidadOdon) {
@@ -80,6 +82,18 @@ public class Controladora {
 
     public List<Odontologo> getOdontologos() {
         return controlPersis.getOdontologos();
+    }
+
+    public void borrarOdontologo(int id) {
+        controlPersis.borrarOdontologo(id);
+    }
+
+    public Odontologo traerOdon(int id) {
+        return controlPersis.traerOdon(id);
+    }
+
+    public void editarOdontologo(Odontologo odon) {
+        controlPersis.editarOdontologo(odon);
     }
 }
     
