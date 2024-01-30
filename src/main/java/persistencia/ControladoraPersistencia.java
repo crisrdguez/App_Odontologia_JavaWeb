@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import logica.Odontologo;
 import logica.Usuario;
 import persistencia.exceptions.NonexistentEntityException;
 
@@ -51,6 +52,16 @@ public class ControladoraPersistencia {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public void crearOdontologo(Odontologo odon) {
+        odontologoJPA.create(odon);
+    }
+
+    public List<Odontologo> getOdontologos() {
+        return odontologoJPA.findOdontologoEntities();
+    }
+
+    
 
     
 }

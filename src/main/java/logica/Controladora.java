@@ -3,6 +3,7 @@ package logica;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import persistencia.ControladoraPersistencia;
 
@@ -59,6 +60,26 @@ public class Controladora {
         
         return ingreso;
         
+    }
+
+    public void crearOdontologo(String dniOdon, String nombreOdon, String apellidoOdon, String telefonoOdon, 
+            String direccionOdon, Date nacimientoOdon, String especialidadOdon) {
+        
+        Odontologo odon =  new Odontologo();
+        
+        odon.setDni(dniOdon);
+        odon.setNombre(nombreOdon);
+        odon.setApellido(apellidoOdon);
+        odon.setTelefono(telefonoOdon);
+        odon.setDireccion(direccionOdon);
+        odon.setFecha_nac(nacimientoOdon);
+        odon.setEspecialidad(especialidadOdon);
+        
+        controlPersis.crearOdontologo(odon);
+    }
+
+    public List<Odontologo> getOdontologos() {
+        return controlPersis.getOdontologos();
     }
 }
     
